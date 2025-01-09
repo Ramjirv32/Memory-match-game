@@ -1,44 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+  --card-background: #111111;
+  --card-hover: #222222;
+  --card-matched: #0070f3;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 20px;
-  }
-  
-  h1 {
-    margin-bottom: 20px;
-  }
-  
-  .game-container {
-    display: grid;
-    grid-template-columns: repeat(4, 100px);
-    grid-gap: 10px;
-    justify-content: center;
-  }
-  
-  .card {
-    width: 100px;
-    height: 100px;
-    background-color: #4caf50;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-    cursor: pointer;
-    transition: transform 0.3s;
-  }
-  
-  .card.flipped {
-    background-color: #fff;
-    color: #000;
-  }
-  
-  .card.matched {
-    background-color: #90ee90;
-    cursor: default;
-  }
-  
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  text-align: center;
+  background-color: var(--background);
+  color: var(--foreground);
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  letter-spacing: -0.05em;
+}
+
+.game-container {
+  display: grid;
+  grid-template-columns: repeat(4, 120px);
+  grid-gap: 16px;
+  justify-content: center;
+}
+
+.card {
+  width: 120px;
+  height: 80px;
+  background-color: var(--card-background);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--foreground);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid #333;
+}
+
+.card:hover {
+  background-color: var(--card-hover);
+  transform: translateY(-2px);
+}
+
+.card.flipped {
+  background-color: var(--foreground);
+  color: var(--background);
+}
+
+.card.matched {
+  background-color: var(--card-matched);
+  cursor: default;
+}
+
